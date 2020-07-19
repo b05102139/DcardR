@@ -40,7 +40,7 @@ install_github("b05102139/DcardR")
 ```{r}
 library(DcardR)
 
-relationship_100 <- dcardPostContent("relationship", 10, by_popular = F, rate_limit = 1)
+relationship_10 <- dcardPostContent("relationship", 10, by_popular = F, rate_limit = 1)
 ```
 
 爬取內容大約如下：
@@ -49,7 +49,7 @@ relationship_100 <- dcardPostContent("relationship", 10, by_popular = F, rate_li
 library(magrittr) # pipe function
 library(knitr) # to help display the dataframe as a table
 
-head(relationship_100, 1) %>%
+head(relationship_10, 1) %>%
   knitr::kable(format = "html")
 ```
 
