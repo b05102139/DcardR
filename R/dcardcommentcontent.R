@@ -6,6 +6,8 @@
 #' @param rate_limit
 #'
 #' @importFrom magrittr %>%
+#' @importFrom tictoc tic toc
+#' @importFrom vctrs vec_rbind
 #' @return
 #' @export
 #'

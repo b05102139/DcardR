@@ -1,6 +1,6 @@
 #' @title DCard General Board Info
 #' @description Returns general info regarding each board.
-#' @importFrom magrittr %>%
+#' @importFrom jsonlite fromJSON
 #' @return
 #' @export
 #'
