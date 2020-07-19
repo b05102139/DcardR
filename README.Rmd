@@ -15,18 +15,18 @@ knitr::opts_chunk$set(
 
 # DcardR
 
-DcardR 的主要功能在於使大量爬取 Dcard 內容的過程簡化，並以四個 function 為主要內容：
+`DcardR` 的主要功能在於使大量爬取 Dcard 內容的過程簡化，並以四個 function 為主要內容：
 
-(1) dcardPostContent() 方便用以爬取文章內容本身，
-(2) dcardCommentContent() 用以爬取留言內容，
-(3) dcardBoardContent() 爬取一個板的相關內容，
-(4) dcardForumInfo() 則提供 Dcard 各個板的綜觀內容。
+(1) `dcardPostContent()`方便用以爬取文章內容本身，  
+(2) `dcardCommentContent()`用以爬取留言內容，  
+(3) `dcardBoardContent()`爬取一個板的相關內容，  
+(4) `dcardForumInfo()`則提供 Dcard 各個板的綜觀內容。
 
 下方附有各個 function 的使用範例與介紹。
 
 ## Installation
 
-要下載 DcardR，請在 console 輸入以下指令：
+要下載 `DcardR`，請在 console 輸入以下指令：
 
 ``` r
 library(devtools)
@@ -35,12 +35,15 @@ install_github("b05102139/DcardR")
 
 ## Example
 
-以下範例介紹如何爬取10篇感情板中的文章。dcardPostContent() 允許輸入想要爬取的板名，想要爬取的數量，是否使用熱門排名（否則使用發表時間作為爬名），以及爬完每篇文章後的休眠時間（以1秒為基礎設定，要加快或變慢的話也可以輸入比1更小或更大的數字，但要小心爬得比1快有可能爬幾下就被API擋住）。爬取過程會顯示於 console，幫助確認進度：
+以下範例介紹如何爬取10篇感情板中的文章。`dcardPostContent()`允許輸入想要爬取的板名，想要爬取的數量，是否使用熱門排名（否則使用發表時間作為爬名），以及爬完每篇文章後的休眠時間（以1秒為基礎設定，要加快或變慢的話也可以輸入比1更小或更大的數字，但要小心爬得比1快有可能爬幾下就被API擋住）。爬取過程會顯示於 console，幫助確認進度：
 
 ```{r}
 library(DcardR)
 
-relationship_10 <- dcardPostContent(board = "relationship", posts = 10, by_popular = F, rate_limit = 1)
+relationship_10 <- dcardPostContent(board = "relationship",
+                                    posts = 10,
+                                    by_popular = F,
+                                    rate_limit = 1)
 ```
 
 爬取內容大約如下：
@@ -53,9 +56,9 @@ head(relationship_10, 1) %>%
   knitr::kable(format = "html")
 ```
 
-dcardPostContent() 跟直接用 dcardBoardContent() 爬取的差異在於，前者會回報全文，後者則只有文章截選內容，並不完整。若希望文章內容完整者請使用此 function。
+`dcardPostContent()`跟直接用`dcardBoardContent()`爬取的差異在於，前者會回報全文，後者則只有文章截選內容，並不完整。若希望文章內容完整者請使用此 function。
 
-留言 (dcardCommentContent()) 與各個板 (dcardBoardContent()) 的爬取也類似以上過程，可以直接參考。唯 dcardForumInfo() 直接使用即可，不需輸入額外資訊，若想知道各個板大致的狀況或者板名（因為上面幾個 function 需要輸入英文板名），可以打開來參考：
+留言 (`dcardCommentContent()`) 與各個板 (`dcardBoardContent()`) 的爬取也類似以上過程，可以直接參考。唯`dcardForumInfo()`直接使用即可，不需輸入額外資訊，若想知道各個板大致的狀況或者板名（因為上面幾個 function 需要輸入英文板名），可以打開來參考：
 
 ```{r, results = 'hide'}
 dcardForumInfo()
