@@ -30,18 +30,22 @@ console，幫助確認進度：
 ``` r
 library(DcardR)
 
-relationship_100 <- DcardR::dcardPostContent("relationship", 10, by_popular = F, rate_limit = 1)
-#> Page 1 complete: 0.353 sec elapsed
-#> Post 1 complete: 1.155 sec elapsed
-#> Post 2 complete: 1.096 sec elapsed
-#> Post 3 complete: 1.125 sec elapsed
-#> Post 4 complete: 1.072 sec elapsed
-#> Post 5 complete: 1.075 sec elapsed
-#> Post 6 complete: 1.072 sec elapsed
-#> Post 7 complete: 1.162 sec elapsed
-#> Post 8 complete: 1.293 sec elapsed
-#> Post 9 complete: 1.146 sec elapsed
-#> Post 10 complete: 1.153 sec elapsed
+relationship_100 <- dcardPostContent("relationship", 10, by_popular = F, rate_limit = 1)
+#> Total pages: 1
+#> Page 1 complete: 0.766 sec elapsed
+#> Finished crawling pages.
+#> Total posts: 10
+#> Post 1 complete: 1.181 sec elapsed
+#> Post 2 complete: 1.412 sec elapsed
+#> Post 3 complete: 1.177 sec elapsed
+#> Post 4 complete: 1.063 sec elapsed
+#> Post 5 complete: 1.197 sec elapsed
+#> Post 6 complete: 1.104 sec elapsed
+#> Post 7 complete: 1.181 sec elapsed
+#> Post 8 complete: 1.173 sec elapsed
+#> Post 9 complete: 1.172 sec elapsed
+#> Post 10 complete: 1.133 sec elapsed
+#> Finished crawling posts.
 ```
 
 爬取內容大約如下：
@@ -527,7 +531,7 @@ NULL
 
 </table>
 
-dcardPostContent() 跟 直接用 dcardBoardContent()
+dcardPostContent() 跟直接用 dcardBoardContent()
 爬取的差異在於，前者會回報全文，後者則只有文章截選內容，並不完整。若希望文章內容完整者請使用此
 function。
 
