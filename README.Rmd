@@ -40,7 +40,7 @@ install_github("b05102139/DcardR")
 ```{r}
 library(DcardR)
 
-relationship_10 <- dcardPostContent("relationship", 10, by_popular = F, rate_limit = 1)
+relationship_10 <- dcardPostContent(board = "relationship", posts = 10, by_popular = F, rate_limit = 1)
 ```
 
 爬取內容大約如下：

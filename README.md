@@ -30,21 +30,21 @@ console，幫助確認進度：
 ``` r
 library(DcardR)
 
-relationship_100 <- dcardPostContent("relationship", 10, by_popular = F, rate_limit = 1)
+relationship_10 <- dcardPostContent(board = "relationship", posts = 10, by_popular = F, rate_limit = 1)
 #> Total pages: 1
-#> Page 1 complete: 0.766 sec elapsed
+#> Page 1 complete: 0.349 sec elapsed
 #> Finished crawling pages.
 #> Total posts: 10
-#> Post 1 complete: 1.181 sec elapsed
-#> Post 2 complete: 1.412 sec elapsed
+#> Post 1 complete: 1.183 sec elapsed
+#> Post 2 complete: 1.23 sec elapsed
 #> Post 3 complete: 1.177 sec elapsed
-#> Post 4 complete: 1.063 sec elapsed
-#> Post 5 complete: 1.197 sec elapsed
-#> Post 6 complete: 1.104 sec elapsed
-#> Post 7 complete: 1.181 sec elapsed
-#> Post 8 complete: 1.173 sec elapsed
-#> Post 9 complete: 1.172 sec elapsed
-#> Post 10 complete: 1.133 sec elapsed
+#> Post 4 complete: 1.188 sec elapsed
+#> Post 5 complete: 1.137 sec elapsed
+#> Post 6 complete: 1.168 sec elapsed
+#> Post 7 complete: 1.992 sec elapsed
+#> Post 8 complete: 1.607 sec elapsed
+#> Post 9 complete: 1.897 sec elapsed
+#> Post 10 complete: 7.959 sec elapsed
 #> Finished crawling posts.
 ```
 
@@ -54,7 +54,7 @@ relationship_100 <- dcardPostContent("relationship", 10, by_popular = F, rate_li
 library(magrittr) # pipe function
 library(knitr) # to help display the dataframe as a table
 
-head(relationship_100, 1) %>%
+head(relationship_10, 1) %>%
   knitr::kable(format = "html")
 ```
 
@@ -204,6 +204,18 @@ nsfw
 
 <th style="text-align:left;">
 
+school
+
+</th>
+
+<th style="text-align:left;">
+
+department
+
+</th>
+
+<th style="text-align:left;">
+
 replyTitle
 
 </th>
@@ -286,12 +298,6 @@ postAvatar
 
 </th>
 
-<th style="text-align:left;">
-
-school
-
-</th>
-
 </tr>
 
 </thead>
@@ -302,34 +308,49 @@ school
 
 <td style="text-align:left;">
 
-234077801
+234077879
 
 </td>
 
 <td style="text-align:left;">
 
-瘋狂夢到無緣男朋友
+這段感情沒有未來
 
 </td>
 
 <td style="text-align:left;">
 
-前陣子在交友軟體認識一個男生，聊天也都不錯他也會跟我講電話什麼的，他算是半個球員吧，所以有找我去看過他的球賽，也喜歡唱歌有找我以前錄過cover，相處都還不錯，見面那天還滿心動
-有次講電話他說起他之前的每一段感情，就說到他的前任女友，然後說雙方都有想複合，但他覺得慢慢來，結果有天套話過程他就說啊對了我們復合了，雖然滿頭問號，但也不想造成他們困擾我就沒再回他訊息了
-可是重點是那之後到現在一個多禮拜，每天都夢到他，昨天甚至夢到他跟我說我們再來錄歌啊！那我們明天見～前天則是他問我為什麼不回他訊息了我還跟他說怕被你女友誤會⋯⋯==
-這有代表什麼意思嗎？我真的不想再夢到⋯畢竟他也不會是我的啊
+在這段感情中雖然有曖昧，但在一起不是的很順，幾乎每次出門都會吵架，甚至讓我覺得這段感情很累，我們分手過程非常多次，都是女方提，讓我覺得我是不是可有可無，很多時候就覺得想要妳的時候就找妳，不想的時候丟在一邊。
+甚至我覺得在這段感情我愛的很卑微，付出這麼多，得不到她一個真心。
+每次分手後都在發文，說想過我們有未來，一個家，一起養寵物，都覺得都是空口說白話。兩個人在一起要磨合不是單方面的，我想穩定更好為他改變，結果我要他改變跟吃屎一樣睏難。
+（1）動不動就暴怒
+當天出去很尬
+
+（2）不懂的避嫌
+
+（3）滿嘴都是理由藉口
+
+（4）不會替我想
+
+（5）喜歡以毒攻毒
+
+（6）每次分手就跟男生出去
+
+（7）一堆不合理的思維
+
+請問這樣談何未來🧐🧐🧐
 
 </td>
 
 <td style="text-align:left;">
 
-前陣子在交友軟體認識一個男生，聊天也都不錯他也會跟我講電話什麼的，他算是半個球員吧，所以有找我去看過他的球賽，也喜歡唱歌有找我以前錄過cover，相處都還不錯，見面那天還滿心動，有次講電話他說起他之前
+在這段感情中雖然有曖昧，但在一起不是的很順，幾乎每次出門都會吵架，甚至讓我覺得這段感情很累，我們分手過程非常多次，都是女方提，讓我覺得我是不是可有可無，很多時候就覺得想要妳的時候就找妳，不想的時候丟在
 
 </td>
 
 <td style="text-align:left;">
 
-TRUE
+FALSE
 
 </td>
 
@@ -359,13 +380,13 @@ NULL
 
 <td style="text-align:left;">
 
-2020-07-19T07:53:19.379Z
+2020-07-19T08:10:29.748Z
 
 </td>
 
 <td style="text-align:left;">
 
-2020-07-19T07:53:19.379Z
+2020-07-19T08:10:29.748Z
 
 </td>
 
@@ -389,7 +410,7 @@ HIDE\_THUMBNAIL
 
 <td style="text-align:left;">
 
-c(“愛情”, “失戀”, “夢境”)
+c(“未來”, “愛情”, “感情”, “分手”, “價值觀”)
 
 </td>
 
@@ -401,7 +422,7 @@ NULL
 
 <td style="text-align:left;">
 
-FALSE
+TRUE
 
 </td>
 
@@ -441,13 +462,25 @@ FALSE
 
 <td style="text-align:left;">
 
+點點
+
+</td>
+
+<td style="text-align:left;">
+
+rasl20264
+
+</td>
+
+<td style="text-align:left;">
+
 NULL
 
 </td>
 
 <td style="text-align:left;">
 
-F
+M
 
 </td>
 
@@ -516,12 +549,6 @@ list()
 </td>
 
 <td style="text-align:left;">
-
-</td>
-
-<td style="text-align:left;">
-
-NULL
 
 </td>
 
